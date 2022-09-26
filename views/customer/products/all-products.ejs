@@ -1,0 +1,41 @@
+<%- include('../../shared/includes/head', { pageTitle: 'All Products' }) %>
+<link rel="stylesheet" href="/styles/products.css">
+<link rel="stylesheet" href="/styles/swiper-bundle.min.css">
+
+</head>
+<body>
+
+  <%- include('../../shared/includes/header') %>
+
+  <div class="banner">
+    <div class="banner-text">
+      <h1>One shop stop for all your book needs and moods.</h1>
+    </div>
+  </div>
+
+  <main>
+    <section class="swiper-product">
+      <div>
+        <h2 class="product-category">best selling</h2>
+      </div>
+      <div class="swiper-container">
+        <button class="pre-btn"><img src="images/arrow.png" alt="" /></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt="" /></button>
+      </div>
+      <div class="product-container">
+        <% for(const product of products) { %>
+          <%- include('../../shared/includes/swiper-items' , {product:product}) %>  
+        <% } %>
+      </div>
+    </section>
+    <h1>All Products<span><hr></span></h1>
+    <ul id="products-grid">
+      <% for (const product of products) { %>
+        <li>
+          <%- include('../../shared/includes/product-item', { product: product }) %>
+        </li>
+      <% } %>
+    </ul>
+  </main>
+
+<%- include('../../shared/includes/footer') %>

@@ -1,0 +1,16 @@
+<div class="product-card">
+  <div class="product-image">
+    <span class="discount-tag">New Arrival</span>
+    <img
+      src="<%= product.imageUrl %>"
+      alt="<%= product.title %>"
+      class="product-thumb"
+    />
+
+    <a class="card-btn" href="/products/<%= product.id %>">View Details</a>
+  </div>
+  <div class="product-info">
+    <h2 class="product-brand"><%=product.title %></h2>
+    <span class="price">₹<%=product.price %></span>
+  </div>
+</div>
